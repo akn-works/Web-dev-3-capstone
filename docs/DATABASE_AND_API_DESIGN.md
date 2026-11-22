@@ -1,7 +1,7 @@
 # Database Design, Architecture & REST API Documentation
 
 **Project:** University Campus Management System  
-**Submitted By:** Harshwardhan | **Roll Number:** `2501730330` | **Semester:** 3  
+**Submitted By:** Ayush Kumar Nayak | **Roll Number:** `2501730071` | **Semester:** 3  
 **University:** K.R. Mangalam University  
 
 ---
