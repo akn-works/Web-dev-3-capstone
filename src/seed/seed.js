@@ -50,12 +50,12 @@ const seedDatabase = async () => {
     phone: '+91-9810000102',
   });
 
-  const harshwardhan = await User.create({
-    name: 'Harshwardhan',
-    email: 'harshwardhan@krmangalam.edu.in',
+  const Ayush Kumar Nayak = await User.create({
+    name: 'Ayush Kumar Nayak',
+    email: 'ayush.nayak@krmangalam.edu.in',
     password: 'Password@123',
     role: 'student',
-    rollNumber: '2501730330',
+    rollNumber: '2501730071',
     department: 'Computer Science & Engineering',
     semester: 3,
     phone: '+91-9810030330',
@@ -144,9 +144,9 @@ const seedDatabase = async () => {
 
   console.log('[Seed] Enrolling students...');
   await Enrollment.create([
-    // Harshwardhan (2501730330) enrolled in CSEN2001 & CSEN2002
-    { student: harshwardhan._id, course: csen2001._id, section: sec2001A._id },
-    { student: harshwardhan._id, course: csen2002._id, section: sec2002A._id },
+    // Ayush Kumar Nayak (2501730071) enrolled in CSEN2001 & CSEN2002
+    { student: Ayush Kumar Nayak._id, course: csen2001._id, section: sec2001A._id },
+    { student: Ayush Kumar Nayak._id, course: csen2002._id, section: sec2002A._id },
     // Aarav Verma (2501730331) enrolled in CSEN2001 & CSEN2002
     { student: aarav._id, course: csen2001._id, section: sec2001A._id },
     { student: aarav._id, course: csen2002._id, section: sec2002A._id },
@@ -165,7 +165,7 @@ const seedDatabase = async () => {
     '2026-11-13',
     '2026-11-16',
   ];
-  // Harshwardhan: 6/7 = 85.71% | Aarav: 3/7 = 42.86% (defaulter) | Priya: 6/7 = 85.71%
+  // Ayush Kumar Nayak: 6/7 = 85.71% | Aarav: 3/7 = 42.86% (defaulter) | Priya: 6/7 = 85.71%
   const harshStatuses2001 = ['Present', 'Present', 'Present', 'Late', 'Absent', 'Present', 'Present'];
   const aaravStatuses2001 = ['Present', 'Absent', 'Absent', 'Present', 'Absent', 'Absent', 'Present'];
   const priyaStatuses2001 = ['Present', 'Present', 'Absent', 'Present', 'Present', 'Present', 'Present'];
@@ -175,7 +175,7 @@ const seedDatabase = async () => {
     attendanceDocs.push({
       course: csen2001._id,
       section: sec2001A._id,
-      student: harshwardhan._id,
+      student: Ayush Kumar Nayak._id,
       markedBy: faculty1._id,
       date: d,
       sessionNumber: 1,
@@ -215,14 +215,14 @@ const seedDatabase = async () => {
     });
   });
 
-  // CSEN2002 (5 sessions): Harshwardhan 5/5 = 100%, Aarav 2/5 = 40% (defaulter)
+  // CSEN2002 (5 sessions): Ayush Kumar Nayak 5/5 = 100%, Aarav 2/5 = 40% (defaulter)
   const dates2002 = ['2026-11-03', '2026-11-05', '2026-11-10', '2026-11-12', '2026-11-17'];
   const aaravStatuses2002 = ['Present', 'Absent', 'Absent', 'Present', 'Absent'];
   dates2002.forEach((d, idx) => {
     attendanceDocs.push({
       course: csen2002._id,
       section: sec2002A._id,
-      student: harshwardhan._id,
+      student: Ayush Kumar Nayak._id,
       markedBy: faculty1._id,
       date: d,
       sessionNumber: 1,
@@ -295,7 +295,7 @@ const seedDatabase = async () => {
   console.log('  Admin   : admin@krmangalam.edu.in');
   console.log('  Faculty1: ananya.sharma@krmangalam.edu.in');
   console.log('  Faculty2: vikram.mehta@krmangalam.edu.in');
-  console.log('  Student1: harshwardhan@krmangalam.edu.in (Roll No: 2501730330)');
+  console.log('  Student1: ayush.nayak@krmangalam.edu.in (Roll No: 2501730071)');
   console.log('  Student2: aarav.verma@krmangalam.edu.in  (Roll No: 2501730331 - <75% attendance)');
   console.log('  Student3: priya.nair@krmangalam.edu.in   (Roll No: 2501730332)');
   console.log('-------------------------------------------------------------');
