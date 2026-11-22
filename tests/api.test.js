@@ -72,7 +72,7 @@ describe('KRMU University Campus Management System — Integration & Real-Time T
 
     // Fetch seeded entity references
     [harshUser, aaravUser, faculty1User, course2001] = await Promise.all([
-      User.findOne({ email: 'harshwardhan@krmangalam.edu.in' }),
+      User.findOne({ email: 'ayush.nayak@krmangalam.edu.in' }),
       User.findOne({ email: 'aarav.verma@krmangalam.edu.in' }),
       User.findOne({ email: 'ananya.sharma@krmangalam.edu.in' }),
       Course.findOne({ code: 'CSEN2001' }),
@@ -95,7 +95,7 @@ describe('KRMU University Campus Management System — Integration & Real-Time T
     [adminToken, faculty1Token, harshToken, aaravToken] = await Promise.all([
       loginActor('admin@krmangalam.edu.in'),
       loginActor('ananya.sharma@krmangalam.edu.in'),
-      loginActor('harshwardhan@krmangalam.edu.in'),
+      loginActor('Ayush.nayak@krmangalam.edu.in'),
       loginActor('aarav.verma@krmangalam.edu.in'),
     ]);
   });
@@ -166,7 +166,7 @@ describe('KRMU University Campus Management System — Integration & Real-Time T
     it('POST /api/auth/login rejects wrong password and rotates refresh tokens', async () => {
       const badLogin = await apiRequest('/api/auth/login', {
         method: 'POST',
-        body: { email: 'harshwardhan@krmangalam.edu.in', password: 'WrongPassword' },
+        body: { email: 'Ayush.nayak@krmangalam.edu.in', password: 'WrongPassword' },
       });
       assert.equal(badLogin.status, 401);
 
@@ -218,8 +218,8 @@ describe('KRMU University Campus Management System — Integration & Real-Time T
 
       const harshProfile = await apiRequest('/api/users/me', { token: harshToken });
       assert.equal(harshProfile.status, 200);
-      assert.equal(harshProfile.data.data.rollNumber, '2501730330');
-      assert.equal(harshProfile.data.data.name, 'Harshwardhan');
+      assert.equal(harshProfile.data.data.rollNumber, '2501730071');
+      assert.equal(harshProfile.data.data.name, 'Ayush Kumar Nayak');
 
       const adminUsers = await apiRequest('/api/users?role=student&page=1&limit=5', {
         token: adminToken,
@@ -382,7 +382,7 @@ describe('KRMU University Campus Management System — Integration & Real-Time T
         token: faculty1Token,
       });
       assert.equal(facultyView.status, 200);
-      assert.equal(facultyView.data.data.student.rollNumber, '2501730330');
+      assert.equal(facultyView.data.data.student.rollNumber, '2501730071');
     });
   });
 
@@ -400,7 +400,7 @@ describe('KRMU University Campus Management System — Integration & Real-Time T
       assert.equal(lowAttendance.status, 200);
       const defaulterRolls = lowAttendance.data.data.map((d) => d.rollNumber);
       assert.ok(defaulterRolls.includes('2501730331'), 'Aarav Verma should be flagged below 75%');
-      assert.ok(!defaulterRolls.includes('2501730330'), 'Harshwardhan should not be flagged');
+      assert.ok(!defaulterRolls.includes('2501730071'), 'Ayush Kumar Nayak should not be flagged');
 
       const enrollmentStats = await apiRequest('/api/reports/enrollment-stats', {
         token: adminToken,
@@ -415,8 +415,8 @@ describe('KRMU University Campus Management System — Integration & Real-Time T
       });
       assert.equal(csvRes.status, 200);
       assert.ok(csvRes.headers.get('content-type').includes('text/csv'));
-      assert.ok(csvRes.data.includes('2501730330'));
-      assert.ok(csvRes.data.includes('Harshwardhan'));
+      assert.ok(csvRes.data.includes('2501730071'));
+      assert.ok(csvRes.data.includes('Ayush Kumar Nayak'));
     });
   });
 
@@ -459,7 +459,7 @@ describe('KRMU University Campus Management System — Integration & Real-Time T
         new Promise((resolve) => aaravSocket.once('connection:ready', resolve)),
       ]);
 
-      // Listen for live announcement on Harshwardhan's socket
+      // Listen for live announcement on Ayush Kumar Nayak's socket
       const announcementPromise = new Promise((resolve) => {
         harshSocket.once('announcement:new', resolve);
       });
