@@ -99,7 +99,7 @@
           }
         },
         {
-          "name": "Login as Student - Ayush Kumar Nayak 2501730071 (Saves studentToken & refreshToken)",
+          "name": "Login as Student -  Kumar Nayak 2501730071 (Saves studentToken & refreshToken)",
           "event": [
             {
               "listen": "test",
@@ -121,7 +121,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"Ayush Kumar Nayak@krmangalam.edu.in\",\n  \"password\": \"Password@123\"\n}"
+              "raw": "{\n  \"email\": \"Ayush.nayak@krmangalam.edu.in\",\n  \"password\": \"Password@123\"\n}"
             },
             "url": "{{baseUrl}}/api/auth/login"
           }
