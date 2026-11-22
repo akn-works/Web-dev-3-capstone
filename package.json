@@ -1,7 +1,7 @@
 {
   "name": "krmu-campus-management-system",
   "version": "1.0.0",
-  "description": "University Campus Management System Backend (Node.js, Express.js, MongoDB, Mongoose, JWT, RBAC, Socket.IO) - Backend Development Capstone Project by Harshwardhan (Roll No: 2501730330, Sem 3, K.R. Mangalam University)",
+  "description": "University Campus Management System Backend (Node.js, Express.js, MongoDB, Mongoose, JWT, RBAC, Socket.IO) - Backend Development Capstone Project by Ayush Kumar Nayak (Roll No: 2501730071, Sem 3, K.R. Mangalam University)",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -20,7 +20,7 @@
     "campus-management",
     "krmu"
   ],
-  "author": "Harshwardhan (Roll No: 2501730330, Sem 3, K.R. Mangalam University)",
+  "author": "Ayush Kumar Nayak (Roll No: 2501730071, Sem 3, K.R. Mangalam University)",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
