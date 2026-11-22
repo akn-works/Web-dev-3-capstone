@@ -1,8 +1,8 @@
 {
   "info": {
-    "name": "KRMU Campus Management System API (Harshwardhan - 2501730330)",
-    "_postman_id": "krmu-capstone-2501730330",
-    "description": "Complete Postman Collection v2.1 for Backend Development Capstone Project 1: University Campus Management System.\nStudent: Harshwardhan | Roll No: 2501730330 | Sem 3 | K.R. Mangalam University.\n\nCovers positive, validation failure (400), unauthorized (401), forbidden RBAC (403), not found (404), duplicate conflict (409), and business rule test cases.",
+    "name": "KRMU Campus Management System API (Ayush Kumar Nayak - 2501730071)",
+    "_postman_id": "krmu-capstone-2501730071",
+    "description": "Complete Postman Collection v2.1 for Backend Development Capstone Project 1: University Campus Management System.\nStudent: Ayush Kumar Nayak | Roll No: 2501730071 | Sem 3 | K.R. Mangalam University.\n\nCovers positive, validation failure (400), unauthorized (401), forbidden RBAC (403), not found (404), duplicate conflict (409), and business rule test cases.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -99,7 +99,7 @@
           }
         },
         {
-          "name": "Login as Student - Harshwardhan 2501730330 (Saves studentToken & refreshToken)",
+          "name": "Login as Student - Ayush Kumar Nayak 2501730071 (Saves studentToken & refreshToken)",
           "event": [
             {
               "listen": "test",
@@ -110,7 +110,7 @@
                   "pm.collectionVariables.set('studentToken', json.data.accessToken);",
                   "pm.collectionVariables.set('refreshToken', json.data.refreshToken);",
                   "pm.collectionVariables.set('studentId', json.data.user._id);",
-                  "pm.test('Roll number is 2501730330', () => pm.expect(json.data.user.rollNumber).to.eql('2501730330'));"
+                  "pm.test('Roll number is 2501730071', () => pm.expect(json.data.user.rollNumber).to.eql('2501730071'));"
                 ],
                 "type": "text/javascript"
               }
@@ -121,7 +121,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"email\": \"harshwardhan@krmangalam.edu.in\",\n  \"password\": \"Password@123\"\n}"
+              "raw": "{\n  \"email\": \"Ayush Kumar Nayak@krmangalam.edu.in\",\n  \"password\": \"Password@123\"\n}"
             },
             "url": "{{baseUrl}}/api/auth/login"
           }
@@ -230,7 +230,7 @@
           }
         },
         {
-          "name": "Get My Profile - Harshwardhan (200 OK)",
+          "name": "Get My Profile - Ayush Kumar Nayak (200 OK)",
           "request": {
             "method": "GET",
             "header": [{ "key": "Authorization", "value": "Bearer {{studentToken}}" }],
@@ -238,7 +238,7 @@
           }
         },
         {
-          "name": "Update My Profile - Harshwardhan (200 OK)",
+          "name": "Update My Profile - Ayush Kumar Nayak (200 OK)",
           "request": {
             "method": "PATCH",
             "header": [
@@ -358,7 +358,7 @@
           }
         },
         {
-          "name": "Get My Enrolled Courses - Harshwardhan (200 OK)",
+          "name": "Get My Enrolled Courses - Ayush Kumar Nayak (200 OK)",
           "request": {
             "method": "GET",
             "header": [{ "key": "Authorization", "value": "Bearer {{studentToken}}" }],
@@ -486,7 +486,7 @@
           }
         },
         {
-          "name": "Get My Attendance Summary - Harshwardhan (200 OK)",
+          "name": "Get My Attendance Summary - Ayush Kumar Nayak (200 OK)",
           "request": {
             "method": "GET",
             "header": [{ "key": "Authorization", "value": "Bearer {{studentToken}}" }],
@@ -531,7 +531,7 @@
           }
         },
         {
-          "name": "List My Scoped Announcements - Harshwardhan (200 OK)",
+          "name": "List My Scoped Announcements - Ayush Kumar Nayak (200 OK)",
           "request": {
             "method": "GET",
             "header": [{ "key": "Authorization", "value": "Bearer {{studentToken}}" }],
