@@ -34,7 +34,7 @@ The **KRMU University Campus Management System** is a production-structured REST
 
 ```bash
 # 1. Navigate to project directory
-cd /Users/Ayush Kumar Nayak/.gemini/antigravity/scratch/krmu-campus-management-system
+ccd Web-dev-3-capstone
 
 # 2. Install dependencies
 npm install
