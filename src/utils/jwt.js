@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 
 const getAccessSecret = () => {
@@ -41,6 +42,7 @@ const generateRefreshToken = (user) => {
   const payload = {
     sub: user._id.toString(),
     type: 'refresh',
+    jti: crypto.randomUUID(),
   };
   return jwt.sign(payload, getRefreshSecret(), {
     expiresIn: process.env.JWT_REFRESH_EXPIRES_IN || '7d',
